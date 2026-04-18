@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dental Trends | Dental Clinic in Dombivli</title>
+  <meta name="description" content="Dental Trends is a 5.0 rated multi‑speciality dental clinic in Dombivli offering implants, root canals, braces, smile makeovers and paediatric dentistry." />
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --primary: #1b84f2;
+      --primary-dark: #0d63c0;
+      --accent: #33c79f;
+      --bg: #020617;
+      --text: #0f172a;
+      --muted: #6b7280;
+      --card-bg: #ffffff;
+      --border-dark: rgba(55, 65, 81, 0.9);
+      --border-light: rgba(148, 163, 184, 0.6);
+      --shadow-soft: 0 24px 60px rgba(15, 23, 42, 0.35);
+      --radius-lg: 22px;
+      --radius-pill: 999px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      background-color: var(--bg);
+      /* Modern gradient background */
+      background-image:
+        radial-gradient(circle at 0% 0%, rgba(56, 189, 248, 0.26), transparent 55%),
+        radial-gradient(circle at 100% 100%, rgba(129, 140, 248, 0.26), transparent 55%),
+        radial-gradient(circle at 120% 20%, rgba(45, 212, 191, 0.22), transparent 55%),
+        linear-gradient(135deg, #020617 0%, #020617 40%, #020617 100%);
+      background-attachment: fixed;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .page {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 18px 16px 90px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Subtle grid overlay */
+    .page::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(to right, rgba(148, 163, 184, 0.06) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(148, 163, 184, 0.06) 1px, transparent 1px);
+      background-size: 32px 32px;
+      opacity: 0.25;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    /* NAVBAR */
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 16px;
+      margin-bottom: 20px;
+      background: rgba(15, 23, 42, 0.92);
+      backdrop-filter: blur(20px);
+      border-radius: 18px;
+      border: 1px solid var(--border-light);
+      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.6);
+      position: sticky;
+      top: 12px;
+      z-index: 20;
+      color: #e5e7eb;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-logo {
+      width: 34px;
+      height: 34px;
+      border-radius: 12px;
+      background: conic-gradient(from 150deg, #1b84f2, #33c79f, #6366f1, #1b84f2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 18px;
+      box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.7);
+    }
+
+    .brand-text-main {
+      font-weight: 600;
+      font-size: 17px;
+      letter-spacing: 0.02em;
+    }
+
+    .brand-text-sub {
+      font-size: 11px;
+      color: #9ca3af;
+    }
+
+    .nav-center {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+    }
+
+    .nav-link {
+      font-size: 13px;
+      color: #9ca3af;
+      padding: 6px 11px;
+      border-radius: 999px;
+      transition: background 0.18s ease, color 0.18s ease;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: #e5e7eb;
+      background: rgba(148, 163, 184, 0.25);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .badge-rating {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 9px;
+      border-radius: var(--radius-pill);
+      background: rgba(22, 163, 74, 0.18);
+      font-size: 12px;
+      color: #bbf7d0;
+      border: 1px solid rgba(74, 222, 128, 0.45);
+      gap: 6px;
+    }
+
+    .badge-star {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #facc15, #f97316);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      color: #0b1120;
+      font-weight: 700;
+    }
+
+    /* BUTTONS */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 14px;
+      border-radius: var(--radius-pill);
+      font-size: 13px;
+      font-weight: 500;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: all 0.18s ease;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: #ffffff;
+      box-shadow: 0 16px 35px rgba(37, 99, 235, 0.6);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 20px 45px rgba(37, 99, 235, 0.8);
+    }
+
+    .btn-outline {
+      background: rgba(15, 23, 42, 0.35);
+      border-color: rgba(148, 163, 184, 0.9);
+      color: #e5e7eb;
+    }
+
+    .btn-outline:hover {
+      background: rgba(15, 23, 42, 0.7);
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.7);
+    }
+
+    .btn-icon {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn-icon svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    /* HERO */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 24px;
+      margin-top: 22px;
+      align-items: center;
+    }
+
+    .hero-left {
+      padding: 24px 22px 24px;
+      border-radius: 26px;
+      background: radial-gradient(circle at 0% 0%, rgba(191, 219, 254, 0.9), rgba(219, 234, 254, 0.92));
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .hero-title {
+      font-size: clamp(24px, 4vw, 32px);
+      line-height: 1.15;
+      font-weight: 700;
+      margin: 0 0 10px;
+      letter-spacing: -0.02em;
+      color: #020617;
+    }
+
+    .hero-highlight {
+      background: linear-gradient(135deg, #1b84f2, #6366f1);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 14px;
+      color: #1f2937;
+      margin-bottom: 16px;
+      max-width: 520px;
+    }
+
+    .hero-subtitle strong {
+      font-weight: 600;
+      color: #111827;
+    }
+
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .hero-note {
+      font-size: 11px;
+      color: #4b5563;
+    }
+
+    .hero-right {
+      padding: 18px 16px;
+      border-radius: 24px;
+      background: rgba(15, 23, 42, 0.94);
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-soft);
+      color: #e5e7eb;
+    }
+
+    .hero-small-title {
+      font-size: 16px;
+      font-weight: 600;
+      margin: 0 0 6px;
+    }
+
+    .hero-small-text {
+      font-size: 13px;
+      color: #cbd5f5;
+      margin: 0 0 10px;
+    }
+
+    .contact-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+      font-size: 13px;
+      color: #d1d5db;
+    }
+
+    .contact-list li {
+      margin-bottom: 6px;
+    }
+
+    /* SECTIONS */
+    .section {
+      margin-top: 28px;
+      background: rgba(15, 23, 42, 0.93);
+      border-radius: 26px;
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-soft);
+      padding: 20px 18px 16px;
+      color: #e5e7eb;
+    }
+
+    .section-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .section-subtitle {
+      font-size: 13px;
+      color: #cbd5f5;
+    }
+
+    .section-badge {
+      font-size: 11px;
+      color: #9ca3af;
+    }
+
+    /* SERVICES */
+    .services-grid {
+      display: grid;
+      gap: 10px;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      font-size: 13px;
+    }
+
+    .service-card {
+      padding: 10px 11px;
+      border-radius: 16px;
+      border: 1px solid var(--border-dark);
+      background:
+        radial-gradient(circle at 100% 0%, rgba(37, 99, 235, 0.18), transparent 55%),
+        rgba(15, 23, 42, 0.96);
+      display: flex;
+      gap: 9px;
+      align-items: flex-start;
+    }
+
+    .service-icon {
+      width: 22px;
+      height: 22px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #1d4ed8, #0ea5e9);
+      color: #e5e7eb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 600;
+      flex-shrink: 0;
+    }
+
+    .service-title {
+      font-weight: 500;
+      margin-bottom: 2px;
+      color: #e5e7eb;
+    }
+
+    .service-text {
+      font-size: 12px;
+      color: #9ca3af;
+    }
+
+    /* TWO-COL */
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+      gap: 18px;
+      font-size: 13px;
+    }
+
+    /* REVIEWS */
+    .review-quote {
+      font-style: italic;
+      color: #e5e7eb;
+      margin-bottom: 8px;
+    }
+
+    .review-meta {
+      font-size: 12px;
+      color: #9ca3af;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 3px 9px;
+      border-radius: var(--radius-pill);
+      font-size: 11px;
+      background: rgba(37, 99, 235, 0.14);
+      color: #c7d2fe;
+      border: 1px solid rgba(129, 140, 248, 0.7);
+    }
+
+    /* GALLERY */
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 12px;
+    }
+
+    .photo-card {
+      border-radius: 18px;
+      overflow: hidden;
+      background: #020617;
+      border: 1px solid var(--border-dark);
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.8);
+    }
+
+    .photo-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+
+    .photo-caption {
+      padding: 6px 9px 8px;
+      font-size: 11px;
+      color: #cbd5f5;
+      border-top: 1px solid rgba(31, 41, 55, 0.9);
+      background: linear-gradient(to bottom, rgba(15, 23, 42, 0.96), rgba(15, 23, 42, 1));
+    }
+
+    .contact-label {
+      font-weight: 500;
+    }
+
+    /* FOOTER */
+    .footer {
+      margin-top: 26px;
+      font-size: 11px;
+      color: #9ca3af;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .footer a {
+      color: #c7d2fe;
+    }
+
+    /* MOBILE CTA */
+    .mobile-cta {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 8px 12px 10px;
+      background: rgba(15, 23, 42, 0.96);
+      display: flex;
+      justify-content: center;
+      z-index: 50;
+      backdrop-filter: blur(14px);
+      border-top: 1px solid rgba(31, 41, 55, 0.95);
+    }
+
+    .mobile-cta-inner {
+      width: 100%;
+      max-width: 480px;
+      display: flex;
+      gap: 8px;
+    }
+
+    .mobile-cta .btn {
+      flex: 1;
+      font-size: 13px;
+      padding-block: 9px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-right {
+        margin-top: 10px;
+      }
+
+      .navbar {
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .nav-center {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        margin-top: 4px;
+      }
+
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+
+      .page {
+        padding-bottom: 90px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .nav-actions {
+        display: none; /* top-right buttons hidden on very small screens, use bottom sticky CTA */
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+      <div class="brand">
+        <div class="brand-logo">DT</div>
+        <div>
+          <div class="brand-text-main">Dental Trends</div>
+          <div class="brand-text-sub">Multi‑Speciality Dental Clinic · Dombivli (E)</div>
+        </div>
+      </div>
+
+      <div class="nav-center">
+        <nav class="nav-links">
+          <a href="#top" class="nav-link active">Home</a>
+          <a href="#services" class="nav-link">Services</a>
+          <a href="#reviews" class="nav-link">Reviews</a>
+          <a href="#gallery" class="nav-link">Gallery</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+      </div>
+
+      <div class="nav-actions">
+        <div class="badge-rating">
+          <span class="badge-star">★</span>
+          5.0 · 204 reviews
+        </div>
+        <a
+          href="https://wa.me/919004592233?text=Hi%20Dental%20Trends%2C%20I%20would%20like%20to%20book%20a%20dental%20appointment.%20Please%20share%20available%20slots."
+          target="_blank"
+          rel="noopener"
+          class="btn btn-primary btn-icon"
+        >
+          WhatsApp
+        </a>
+        <a href="tel:+919004592233" class="btn btn-outline btn-icon">
+          Call now
+        </a>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="hero-left">
+        <h1 class="hero-title">
+          Pain‑free, precise <span class="hero-highlight">dental care</span> for the whole family.
+        </h1>
+        <p class="hero-subtitle">
+          Dental Trends in Dombivli offers <strong>implants, root canals, braces, cosmetic smile makeovers</strong>
+          and <strong>gentle paediatric dentistry</strong> – all under one roof, with a strong focus on comfort
+          and clear explanation.
+        </p>
+        <div class="hero-cta">
+          <!-- BOOK APPOINTMENT = WhatsApp with pre-filled message -->
+          <a
+            href="https://wa.me/919004592233?text=Hi%20Dental%20Trends%2C%20I%20would%20like%20to%20book%20a%20dental%20appointment.%20Please%20share%20today%E2%80%99s%20available%20slots."
+            target="_blank"
+            rel="noopener"
+            class="btn btn-primary btn-icon"
+          >
+            Book appointment on WhatsApp
+          </a>
+          <!-- CALL NOW = dialer with number -->
+          <a href="tel:+919004592233" class="btn btn-outline btn-icon">
+            Call now
+          </a>
+        </div>
+        <p class="hero-note">
+          Located at Char Rasta, Manpada Road – above Phadke Watch Center, next to TJSB Bank.
+          Open today · Closes 9:00 PM.
+        </p>
+      </div>
+
+      <aside class="hero-right">
+        <h2 class="hero-small-title">Why patients choose Dental Trends</h2>
+        <p class="hero-small-text">
+          5.0 ★ rating on Google from over 200 reviews. Patients often mention:
+        </p>
+        <ul class="contact-list">
+          <li>• Gentle, pain‑controlled treatments</li>
+          <li>• Child‑friendly care with small gifts and positive reinforcement</li>
+          <li>• Detailed explanation of every step before starting</li>
+          <li>• Clean, modern clinic with digital X‑rays</li>
+        </ul>
+      </aside>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section" id="services">
+      <div class="section-header">
+        <div>
+          <div class="section-title">Treatments & services</div>
+          <p class="section-subtitle">
+            Comprehensive dental care for adults and children – with a focus on long‑term results and comfort.
+          </p>
+        </div>
+        <div class="section-badge">All major dental procedures under one roof</div>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">IM</div>
+          <div>
+            <div class="service-title">Dental implants</div>
+            <div class="service-text">
+              Single and multiple implants to replace missing teeth with a natural look and chewing strength,
+              carefully planned using X‑rays.
+            </div>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">CR</div>
+          <div>
+            <div class="service-title">Crowns & bridges</div>
+            <div class="service-text">
+              Metal‑ceramic and all‑ceramic caps to strengthen weak teeth, plus bridges to close gaps without removable
+              dentures.
+            </div>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">DN</div>
+          <div>
+            <div class="service-title">Dentures (complete & partial)</div>
+            <div class="service-text">
+              Removable dentures for patients missing several or all teeth, designed for comfort and stable fit.
+            </div>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">RC</div>
+          <div>
+            <div class="service-title">Root canal & fillings</div>
+            <div class="service-text">
+              Pain‑controlled root canal treatments followed by tooth‑coloured composite fillings for a natural look.
+            </div>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">SM</div>
+          <div>
+            <div class="service-title">Smile makeovers & veneers</div>
+            <div class="service-text">
+              Veneers, laminates, gum depigmentation and reshaping to correct gaps, stains and uneven teeth.
+            </div>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">BR</div>
+          <div>
+            <div class="service-title">Braces & orthodontics</div>
+            <div class="service-text">
+              Braces and alignment plans to correct crowding, spacing and bite issues in teens and adults.
+            </div>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">KD</div>
+          <div>
+            <div class="service-title">Paediatric (kids’) dentistry</div>
+            <div class="service-text">
+              Gentle treatment for children with patient explanation and small gifts to reduce fear of the dentist.
+            </div>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">SC</div>
+          <div>
+            <div class="service-title">Scaling, polishing & hygiene</div>
+            <div class="service-text">
+              Deep cleaning to remove plaque and calculus, polishing and personalised brushing / flossing guidance.
+            </div>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">XR</div>
+          <div>
+            <div class="service-title">Digital X‑rays & diagnosis</div>
+            <div class="service-text">
+              Low‑radiation digital X‑rays and oral examination, including screening for systemic conditions that show
+              in the mouth.
+            </div>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">FM</div>
+          <div>
+            <div class="service-title">Full‑mouth rehabilitation</div>
+            <div class="service-text">
+              Comprehensive planning for multiple missing or worn teeth, combining implants, crowns and bite correction.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section class="section" id="reviews">
+      <div class="section-header">
+        <div>
+          <div class="section-title">Patient reviews</div>
+          <p class="section-subtitle">
+            Dental Trends has a consistent 5.0 rating on Google with more than 200 reviews
+            from patients and parents.
+          </p>
+        </div>
+        <div class="section-badge">Real feedback from families in and around Dombivli</div>
+      </div>
+
+      <div class="two-col">
+        <div>
+          <p class="review-quote">
+            “I would highly recommend her to anyone looking for high‑quality dental care.”
+          </p>
+          <p class="review-quote">
+            “She pampered her with small gifts during each session. My child is no longer afraid of the dentist.”
+          </p>
+          <p class="review-quote">
+            “Explained all treatment options clearly with pros and cons, and never forced anything.”
+          </p>
+          <p class="review-quote">
+            “Clinic is very clean and the doctor is very gentle. Root canal was almost painless.”
+          </p>
+          <div class="review-meta">
+            These are typical examples of what patients write in their Google reviews for Dental Trends.
+          </div>
+        </div>
+
+        <div>
+          <div class="tag">Family‑friendly · Kids feel safe here</div>
+          <p style="margin-top: 10px; color: #d1d5db;">
+            Parents appreciate that children are handled with patience, slow introduction to procedures and
+            small gifts that make the visit feel like a positive experience.
+          </p>
+          <div class="tag" style="margin-top: 10px;">Transparent communication</div>
+          <p style="margin-top: 10px; color: #d1d5db;">
+            Adults often mention that their treatment plan, costs and home‑care instructions were explained clearly
+            before starting, so they felt informed and in control.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="section" id="gallery">
+      <div class="section-header">
+        <div>
+          <div class="section-title">Clinic gallery</div>
+          <p class="section-subtitle">
+            A quick visual tour of Dental Trends – from reception to the dental chair and kids’ area.
+            Replace these example images with your own photos in the <code>images</code> folder.
+          </p>
+        </div>
+        <div class="section-badge">4–5 photos showing your real clinic</div>
+      </div>
+
+      <div class="photo-grid">
+        <div class="photo-card">
+          <img src="images/clinic-reception.jpg" alt="Reception area of Dental Trends clinic in Dombivli" />
+          <div class="photo-caption">
+            Bright reception area with seating for patients and parents while they wait for their appointment.
+          </div>
+        </div>
+
+        <div class="photo-card">
+          <img src="images/operatory-chair.jpg" alt="Modern dental chair and operatory at Dental Trends" />
+          <div class="photo-caption">
+            Fully equipped dental operatory with modern chair, overhead light and digital instruments.
+          </div>
+        </div>
+
+        <div class="photo-card">
+          <img src="images/kids-corner.jpg" alt="Kids corner at Dental Trends with toys and books" />
+          <div class="photo-caption">
+            Kid‑friendly corner to keep children relaxed before and after their appointment.
+          </div>
+        </div>
+
+        <div class="photo-card">
+          <img src="images/consultation-desk.jpg" alt="Consultation area at Dental Trends" />
+          <div class="photo-caption">
+            Consultation space where treatment plans, options and costs are explained in detail.
+          </div>
+        </div>
+
+        <div class="photo-card">
+          <img src="images/dentist-team.jpg" alt="Dental Trends dentist and team" />
+          <div class="photo-caption">
+            The Dental Trends team – focused on gentle care, accuracy and follow‑up support.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <div class="section-header">
+        <div>
+          <div class="section-title">Contact & location</div>
+          <p class="section-subtitle">
+            Have a question before booking? Want to confirm timings or get directions?
+            Use any of the options below to reach Dental Trends.
+          </p>
+        </div>
+      </div>
+
+      <div class="two-col">
+        <div>
+          <ul class="contact-list">
+            <li>
+              <span class="contact-label">Address:</span><br />
+              Char Rasta, 2nd Floor, Dongre Building,<br />
+              Manpada Rd, above Phadke Watch Center,<br />
+              next to TJSB Bank, Dombivli, Maharashtra 421201
+            </li>
+            <li>
+              <span class="contact-label">Phone:</span>
+              <a href="tel:+919004592233">090045 92233</a>
+            </li>
+            <li>
+              <span class="contact-label">WhatsApp:</span>
+              <a href="https://wa.me/919004592233" target="_blank" rel="noopener">Chat on WhatsApp</a>
+            </li>
+            <li>
+              <span class="contact-label">Timings:</span><br />
+              Open today · Closes 9:00 PM<br />
+              (Timings may vary on Sundays and holidays – please confirm on call or WhatsApp.)
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="tag">Directions</div>
+          <p style="margin-top: 10px; color: #d1d5db;">
+            Search for “Dental Trends, Manpada Road, Dombivli” on Google Maps for live directions.
+            The clinic is on the 2nd floor of Dongre Building, landmark: Phadke Watch Center and TJSB Bank.
+          </p>
+          <p style="margin-top: 8px;">
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Dental+Trends+Dombivli"
+              target="_blank"
+              rel="noopener"
+              class="btn btn-outline btn-icon"
+            >
+              Open in Google Maps
+            </a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div>
+        © <span id="year"></span> Dental Trends · Dombivli (E)
+      </div>
+      <div>
+        Call: <a href="tel:+919004592233">090045 92233</a> ·
+        WhatsApp: <a href="https://wa.me/919004592233" target="_blank" rel="noopener">Chat now</a>
+      </div>
+    </footer>
+  </div>
+
+  <!-- STICKY MOBILE CTA -->
+  <div class="mobile-cta">
+    <div class="mobile-cta-inner">
+      <a
+        href="https://wa.me/919004592233?text=Hi%20Dental%20Trends%2C%20I%20would%20like%20to%20book%20a%20dental%20appointment.%20Please%20share%20available%20slots."
+        target="_blank"
+        rel="noopener"
+        class="btn btn-primary"
+      >
+        Book on WhatsApp
+      </a>
+      <a href="tel:+919004592233" class="btn btn-outline">
+        Call now
+      </a>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
